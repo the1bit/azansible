@@ -1,7 +1,6 @@
 [vnet]
 vnet
 
-
 [vms]
 cust-01 vm_fe_ip="79.0.0.11"
 cust-02 vm_fe_ip="79.0.0.12"

@@ -7,7 +7,7 @@ azansible
 * [Background](#background)
 * [Prerequisites](#prerequisites)
 * [Solutions](#solutions)
-	* [100 - Fundamentals]
+	* [100 - Fundamentals](#100---fudamentals)
 
 # Background
 
@@ -92,4 +92,4 @@ You are ready to Ansible on Azure.
 # Solutions
 ## 100 - Fudamentals
 
-A simple and easy to understand example which can work in a live environment as well. [Jump to there](100_fundamenals/readme.md)
+A simple and easy to understand example which can work in a live environment as well. [Jump to there](100_fundamentals)

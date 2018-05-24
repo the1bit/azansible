@@ -1,6 +1,8 @@
 100 - Fundamentals
 === 
 
+# Description
+
 A simple and easy to understand example which can work in a live environment as well. It is a solution which creates the followings:
 
 * Resource Group
@@ -8,6 +10,8 @@ A simple and easy to understand example which can work in a live environment as 
 * FrontEnd subnet for Virtual Network
 * Network Security Group for FrontEnd subnet
 * Some Network Cards which connect to FrontEnd subnet
+
+# Usage
 
 1. VNET 
 

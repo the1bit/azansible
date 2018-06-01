@@ -8,6 +8,7 @@ azansible
 * [Prerequisites](#prerequisites)
 * [Solutions](#solutions)
 	* [100 - Fundamentals](#100---fudamentals)
+        * [101 - Check computers](#101---check-computers)
 
 # Background
 
@@ -93,3 +94,9 @@ You are ready to Ansible on Azure.
 ## 100 - Fudamentals
 
 A simple and easy to understand example which can work in a live environment as well. [Jump there](100_fundamentals)
+
+## 101 - Check computers
+
+A tool for check your Linux server availability with a simple SSH login. [Jump there](101_check_computers)
+
+

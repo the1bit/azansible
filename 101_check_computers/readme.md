@@ -3,7 +3,7 @@
 
 # Description
 
-A tool for check your Linux server availability with a simple SSH login:
+A tool for check your Linux server availability with a simple SSH login.
 
 
 # Execution 

@@ -8,7 +8,7 @@ azansible
 * [Prerequisites](#prerequisites)
 * [Solutions](#solutions)
 	* [100 - Fundamentals](#100---fudamentals)
-        * [101 - Check computers](#101---check-computers)
+	* [101 - Check computers](#101---check-computers)
 
 # Background
 

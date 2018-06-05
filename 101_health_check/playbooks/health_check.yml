@@ -4,6 +4,6 @@
   tasks:
   - name: Execute local script for health checking
     script: "{{ mainpath }}/files/healthcheck.sh"
-    register: local_res
-    failed_when: "'ERROR' in local_res.stdout"
-    changed_when: "'CHANGED' in local_res.stdout"
+    register: script_result
+    failed_when: "'ERROR' in script_result.stdout"
+    changed_when: "'CHANGED' in script_result.stdout"

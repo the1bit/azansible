@@ -1,0 +1,9 @@
+- name: Health checks for computers
+  hosts: vms
+  gather_facts: no
+  tasks:
+  - name: Execute local script for health checking
+    script: "{{ mainpath }}/files/healthcheck.sh"
+    register: local_res
+    failed_when: "'ERROR' in local_res.stdout"
+    changed_when: "'CHANGED' in local_res.stdout"

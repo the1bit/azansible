@@ -97,6 +97,6 @@ A simple and easy to understand example which can work in a live environment as 
 
 ## 101 - Health check
 
-A tool for check your Linux server availability with a simple script execution on the remote VM.. [Jump there](101_health_check)
+A tool for check your Linux server availability with a simple script execution on the remote VM. [Jump there](101_health_check)
 
 

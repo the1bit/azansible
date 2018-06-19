@@ -1,4 +1,4 @@
-- name: Create Azure VM - {{ vm_name }}
+- name: Create Azure VM - {{ inventory_hostname }}
   hosts: vms
   connection: local
   tasks:
@@ -23,7 +23,7 @@
     azure_rm_publicipaddress:
       resource_group: the1bit-rg-custom
       allocation_method: Dynamic
-      name: "{{vm_name}}-pip"
+      name: "{{inventory_hostname}}-pip"
   - name: Create Network Security Group - FE -  that allows SSH
     azure_rm_securitygroup:
       resource_group: the1bit-rg-custom
@@ -42,27 +42,27 @@
   - name: Create virtual network inteface card - FE
     azure_rm_networkinterface:
       resource_group: the1bit-rg-custom
-      name: "{{vm_name}}-nic-fe"
+      name: "{{inventory_hostname}}-nic-fe"
       virtual_network: the1bit-vnet
       subnet: the1bit-subnet-fe
       security_group: the1bit-nsg-fe
       ip_configurations:
         - name: ipconfig1
           private_ip_allocation_method: Static
-          private_ip_address: "79.0.0.12"
-          public_ip_address_name: "{{vm_name}}-pip"
+          private_ip_address: "{{ansible_ssh_host}}"
+          public_ip_address_name: "{{inventory_hostname}}-pip"
           primary: true
   - name: Create virtual network inteface card - BE
     azure_rm_networkinterface:
       resource_group: the1bit-rg-custom
-      name: "{{vm_name}}-nic-be"
+      name: "{{inventory_hostname}}-nic-be"
       virtual_network: the1bit-vnet
       subnet: the1bit-subnet-be
       security_group: the1bit-nsg-be
       ip_configurations:
         - name: ipconfig1
           private_ip_allocation_method: Static
-          private_ip_address: "79.0.1.12"
+          private_ip_address: "{{secondary_ip}}"
   - name: Create an availability set with UD - 5, FD - 3
     azure_rm_availabilityset:
       name: the1bit-availabilityset-custom
@@ -73,7 +73,7 @@
   - name: Create VM - 2 NICs
     azure_rm_virtualmachine:
       resource_group: the1bit-rg-custom
-      name: "{{vm_name}}"
+      name: "{{inventory_hostname}}"
       vm_size: Standard_DS12_v2
       availability_set: the1bit-availabilityset-custom
       managed_disk_type: Standard_LRS
@@ -83,8 +83,8 @@
         - path: /home/localadmin/.ssh/authorized_keys
           key_data: "ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEAw7MZOoRarCnS3Tg9G6HBd4bdUmEldXKRwAb7WZ4aW7oHOEZZCiQPFVBjM0G15Kz+UN5fokewxO9Ck902pAKLNlJmQLnZUol3M3U0zoEtY/dS6U7KuppqS9QsvgNgqjJuTQet+WnMfQbfGP6aqQ/Dk+9uEYnRJPrW1aiZVCBsT09hD2CtewHwKvVm/gHNT7aoIKzbRCwXznHMe7Qr30sye19P80Ha67O9Z66Jwgdytp4V88KcyzreJGgTyzf77kkIfHU0wveSv+NboEmrMzVpsaLeNgCeBquTrOHmR0f1aIynaR4ni/IdO2kuGMDPtnOvJwGu5nXdYEkNmzQRaPlv0Q=="
       network_interface_names:
-      - "{{vm_name}}-nic-fe"
-      - "{{vm_name}}-nic-be"
+      - "{{inventory_hostname}}-nic-fe"
+      - "{{inventory_hostname}}-nic-be"
       image:
         offer: CentOS
         publisher: OpenLogic

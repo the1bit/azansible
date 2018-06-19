@@ -18,7 +18,7 @@ ansible-playbook -i inventory/ -e mainpath="/data/git/azansible/201_multi_nic_vm
 ```
 
 # Result
-![Result Multi NICs VM](../images/multi_nic_vm.png)
+![Result Multi NICs VM](/images/multi_nic_vm.png)
 
 
 # login to vm

@@ -18,15 +18,15 @@ ansible-playbook -i inventory/ -e mainpath="/data/git/azansible/201_multi_nic_vm
 ```
 
 # Result
-![Result Multi NICs VM](/images/multi_nic_vm.png)
+![Result Multi NICs VM](/images/multi_nic_vm.PNG)
 
 
 # login to vm
 
 
 ``` bash
-chmod 700 /data/git/azansible/201_multi_nic_vm/files/azansible.ppk
+chmod 600 /data/git/azansible/201_multi_nic_vm/files/azansible_openssh
 
-ssh -i /data/git/azansible/201_multi_nic_vm/files/azansible.ppk localadmin@137.117.190.189
+ssh -i /data/git/azansible/201_multi_nic_vm/files/azansible_openssh localadmin@137.117.190.189
 ```
 

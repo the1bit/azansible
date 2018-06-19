@@ -7,7 +7,7 @@ Create VMs with 2 NICs
 
 # Requirements
 
-* Ansible 2.6 beta
+* Ansible 2.5.5 or higher
 
 # Execution 
 

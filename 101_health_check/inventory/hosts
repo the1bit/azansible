@@ -2,7 +2,4 @@
 vnet
 
 [vms]
-cust-01 ansible_ssh_host=79.0.0.11
-cust-02 ansible_ssh_host=79.0.0.12
-cust-03 ansible_ssh_host=79.0.0.13
-cust-04 ansible_ssh_host=79.0.0.14
+the1bit-cust-01 ansible_ssh_host=79.0.0.11

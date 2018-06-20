@@ -1,5 +1,5 @@
 - name: Create Network Cards
-  hosts: vms
+  hosts: virtualmachines
   connection: local
   gather_facts: no
   vars:

@@ -1,5 +1,5 @@
 - name: Create Azure VM
-  hosts: vms
+  hosts: virtualmachines
   connection: local
   gather_facts: no
   tasks:

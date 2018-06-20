@@ -1,14 +1,14 @@
 [resourcegroups]
 custom
 shared
-all
 vms
+computers
 
 
 [virtualnetworks]
 vnet resource_group="shared"
 
-[vms]
+[virtualmachines]
 the1bit-cust-01 ansible_ssh_host=79.0.0.11 secondary_ip=79.0.1.11 role="custom" resource_group="custom"
 
 [availability_sets]

@@ -1,7 +1,8 @@
 [resourcegroups]
 custom
 shared
-mst
+all
+vms
 
 
 [vnet]

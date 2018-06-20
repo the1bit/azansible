@@ -1,6 +1,7 @@
 - name: Create Network
   hosts: vms
   connection: local
+  gather_facts: no
   vars:
     rgName: "{{env_id}}-rg-{{resource_group}}"
     vnet_name: "{{env_id}}-vnet"
@@ -14,7 +15,9 @@
     azure_rm_networkinterface:
       resource_group: "{{rgName}}"
       name: "{{inventory_hostname}}-nic-fe"
-      virtual_network: "{{env_id}}-vnet"
+      virtual_network:
+        name: "{{env_id}}-vnet"
+        resource_group: "{{env_id}}-rg-{{vnet_rg}}"
       subnet: "{{env_id}}-subnet-fe"
       security_group: "{{env_id}}-nsg-fe"
       ip_configurations:
@@ -27,7 +30,9 @@
     azure_rm_networkinterface:
       resource_group: "{{rgName}}"
       name: "{{inventory_hostname}}-nic-be"
-      virtual_network: "{{env_id}}-vnet"
+      virtual_network:
+        name: "{{env_id}}-vnet"
+        resource_group: "{{env_id}}-rg-{{vnet_rg}}"
       subnet: "{{env_id}}-subnet-be"
       security_group: "{{env_id}}-nsg-be"
       ip_configurations:

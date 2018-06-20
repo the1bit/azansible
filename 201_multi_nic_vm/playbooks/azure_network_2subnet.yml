@@ -18,10 +18,7 @@
       virtual_network:
         name: "{{env_id}}-vnet"
         resource_group: "{{env_id}}-rg-{{vnet_rg}}"
-      subnet:
-        name: "{{env_id}}-subnet-fe"
-        resource_group: "{{env_id}}-rg-{{vnet_rg}}"
-        virtual_network: "{{env_id}}-vnet"
+        subnet: "{{env_id}}-subnet-fe"
       security_group: "{{env_id}}-nsg-fe"
       ip_configurations:
         - name: ipconfig1

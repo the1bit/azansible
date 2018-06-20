@@ -1,0 +1,6 @@
+---
+- import_playbook: azure_create_resourcegroups.yml
+- import_playbook: azure_vnet_nsg_2subnet.yml
+- import_playbook: azure_network_2subnet.yml
+- import_playbook: azure_availabilityset.yml
+- import_playbook: azure_multi_nic_vm.yml

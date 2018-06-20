@@ -1,4 +1,4 @@
-- name: Create Network
+- name: Create Network Cards
   hosts: vms
   connection: local
   gather_facts: no

@@ -5,12 +5,12 @@
     rgName: "{{env_id}}-rg-{{resource_group}}"
     vnet_name: "{{env_id}}-vnet"
   tasks:
-    - name: Create public IP address
+  - name: Create public IP address
     azure_rm_publicipaddress:
       resource_group: "{{rgName}}"
       allocation_method: Dynamic
       name: "{{inventory_hostname}}-pip"
-    - name: Create virtual network inteface card - FE
+  - name: Create virtual network inteface card - FE
     azure_rm_networkinterface:
       resource_group: "{{rgName}}"
       name: "{{inventory_hostname}}-nic-fe"

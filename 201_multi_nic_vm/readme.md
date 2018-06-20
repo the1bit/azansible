@@ -14,7 +14,7 @@ Create VMs with 2 NICs
 * **mainpath**: Path of project directory 
 
 ``` bash
-ansible-playbook -i inventory/ -e mainpath="/data/git/azansible/201_multi_nic_vm" playbooks/create_multi_nic_vm.yml
+ansible-playbook -i inventory/ -e mainpath="/data/git/azansible/201_multi_nic_vm" playbooks/main.yml
 ```
 
 # Result

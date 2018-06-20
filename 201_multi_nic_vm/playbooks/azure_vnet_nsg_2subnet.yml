@@ -1,5 +1,5 @@
 - name: Create VirtualNetwork
-  hosts: vnet
+  hosts: virtualnetworks
   connection: local
   gather_facts: no
   vars:

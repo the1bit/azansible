@@ -5,7 +5,7 @@ all
 vms
 
 
-[vnet]
+[virtualnetworks]
 vnet resource_group="shared"
 
 [vms]

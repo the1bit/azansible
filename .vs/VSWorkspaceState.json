@@ -1,12 +1,16 @@
 {
   "ExpandedNodes": [
     "",
+    "\\100_fundamentals",
+    "\\100_fundamentals\\inventory",
+    "\\100_fundamentals\\inventory\\group_vars",
+    "\\100_fundamentals\\playbooks",
     "\\101_health_check",
-    "\\101_health_check\\files",
-    "\\101_health_check\\inventory",
-    "\\101_health_check\\inventory\\group_vars",
-    "\\101_health_check\\playbooks"
+    "\\201_multi_nic_vm",
+    "\\201_multi_nic_vm\\inventory",
+    "\\201_multi_nic_vm\\inventory\\group_vars",
+    "\\201_multi_nic_vm\\playbooks"
   ],
-  "SelectedNode": "\\101_health_check",
+  "SelectedNode": "\\201_multi_nic_vm\\inventory\\group_vars\\virtualmachines.yml",
   "PreviewInSolutionExplorer": false
 }

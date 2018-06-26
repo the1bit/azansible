@@ -3,7 +3,7 @@
   connection: local
   gather_facts: no
   vars:
-   rgName: "{{env_id}}-rg-{{resourceGroup}}"
+   rgName: "{{env_id}}-rg-{{resource_group}}"
   tasks:
   - name: Create an availability set with UD - FD
     azure_rm_availabilityset:

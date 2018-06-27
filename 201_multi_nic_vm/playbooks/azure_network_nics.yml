@@ -11,7 +11,7 @@
       resource_group: "{{rgName}}"
       allocation_method: Dynamic
       name: "{{inventory_hostname}}-pip"
-      when: role == "web"
+      when: "{{role}}" == "web"
   - name: Create virtual network inteface card - FE
     azure_rm_networkinterface:
       resource_group: "{{rgName}}"

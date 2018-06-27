@@ -1,0 +1,6 @@
+---
+- import_playbook: azure_create_resourcegroups.yml
+- import_playbook: azure_network_vnet_nsg.yml
+- import_playbook: azure_network_nics.yml
+- import_playbook: azure_availabilityset.yml
+- import_playbook: azure_vm_two_nics.yml

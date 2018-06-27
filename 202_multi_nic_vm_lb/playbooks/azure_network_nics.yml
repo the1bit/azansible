@@ -6,13 +6,6 @@
     rgName: "{{env_id}}-rg-{{resource_group}}"
     vnet_name: "{{env_id}}-vnet"
   tasks:
-  - name: Create public IP address
-    azure_rm_publicipaddress:
-      resource_group: "{{rgName}}"
-      allocation_method: Dynamic
-      name: "{{inventory_hostname}}-pip"
-    when:
-    - "role == 'web'"
   - name: Create virtual network inteface card - FE
     azure_rm_networkinterface:
       resource_group: "{{rgName}}"
@@ -26,7 +19,6 @@
         - name: ipconfig1
           private_ip_allocation_method: Static
           private_ip_address: "{{ansible_ssh_host}}"
-          public_ip_address_name: "{{inventory_hostname}}-pip"
           primary: true
   - name: Create virtual network inteface card - BE
     azure_rm_networkinterface:

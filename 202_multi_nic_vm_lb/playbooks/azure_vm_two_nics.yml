@@ -1,0 +1,29 @@
+- name: Create Azure VM
+  hosts: virtualmachines
+  connection: local
+  gather_facts: no
+  tasks:
+  - name: Create VM - 2 NICs
+    azure_rm_virtualmachine:
+      resource_group: "{{env_id}}-rg-{{resource_group}}"
+      name: "{{inventory_hostname}}"
+      vm_size: "{{vmsize}}"
+      availability_set: "{{env_id}}-availabilityset-{{role}}"
+      managed_disk_type: Standard_LRS
+      admin_username: localadmin
+      ssh_password_enabled: false
+      ssh_public_keys:
+        - path: /home/localadmin/.ssh/authorized_keys
+          key_data: "{{public_key}}"
+      network_interface_names:
+      - "{{inventory_hostname}}-nic-fe"
+      - "{{inventory_hostname}}-nic-be"
+      image:
+        offer: CentOS
+        publisher: OpenLogic
+        sku: '7.3'
+        version: latest
+      data_disks:
+        - lun: 0
+          disk_size_gb: 128
+          managed_disk_type: Premium_LRS

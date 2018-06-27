@@ -1,4 +1,4 @@
-- name: Create VirtualNetwork
+- name: Create VirtualNetwork and NSGs
   hosts: virtualnetworks
   connection: local
   gather_facts: no

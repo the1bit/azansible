@@ -7,7 +7,7 @@
     azure_rm_virtualmachine:
       resource_group: "{{env_id}}-rg-{{resource_group}}"
       name: "{{inventory_hostname}}"
-      vm_size: Standard_DS12_v2
+      vm_size: "{{vmsize}}"
       availability_set: "{{env_id}}-availabilityset-{{role}}"
       managed_disk_type: Standard_LRS
       admin_username: localadmin

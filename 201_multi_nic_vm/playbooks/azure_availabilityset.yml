@@ -1,4 +1,4 @@
-- name: Create Azure VM
+- name: Create Availability-Sets
   hosts: availability_sets
   connection: local
   gather_facts: no

@@ -8,7 +8,7 @@
       resource_group: "{{env_id}}-rg-{{resource_group}}"
       name: "{{inventory_hostname}}"
       vm_size: "{{vmsize}}"
-      availability_set: "{{env_id}}-availabilityset-{{role}}"
+      availability_set: "{{env_id}}-availabilityset-{{vmrole}}"
       managed_disk_type: Standard_LRS
       admin_username: localadmin
       ssh_password_enabled: false

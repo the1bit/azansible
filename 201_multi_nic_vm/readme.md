@@ -5,6 +5,11 @@
 
 Create VMs with 2 NICs
 
+# Azure architecture for this soluiton
+
+![AzureArchitecture_201](/images/AzureArchitecture_201.png)
+
+
 # Requirements
 
 * Ansible 2.7dev

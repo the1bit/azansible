@@ -1,0 +1,35 @@
+- name: Create Network Cards
+  hosts: virtualmachines
+  connection: local
+  gather_facts: no
+  vars:
+    rgName: "{{env_id}}-rg-{{resource_group}}"
+    vnet_name: "{{env_id}}-vnet"
+  tasks:
+  - name: Create virtual network inteface card - FE
+    azure_rm_networkinterface:
+      resource_group: "{{rgName}}"
+      name: "{{inventory_hostname}}-nic-fe"
+      virtual_network:
+        name: "{{env_id}}-vnet"
+        resource_group: "{{env_id}}-rg-{{vnet_rg}}"
+      subnet: "{{env_id}}-subnet-fe"
+      create_with_security_group: False
+      ip_configurations:
+        - name: ipconfig1
+          private_ip_allocation_method: Static
+          private_ip_address: "{{ansible_ssh_host}}"
+          primary: true
+  - name: Create virtual network inteface card - BE
+    azure_rm_networkinterface:
+      resource_group: "{{rgName}}"
+      name: "{{inventory_hostname}}-nic-be"
+      virtual_network:
+        name: "{{env_id}}-vnet"
+        resource_group: "{{env_id}}-rg-{{vnet_rg}}"
+      subnet: "{{env_id}}-subnet-be"
+      create_with_security_group: False
+      ip_configurations:
+        - name: ipconfig1
+          private_ip_allocation_method: Static
+          private_ip_address: "{{secondary_ip}}"

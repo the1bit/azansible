@@ -105,6 +105,8 @@ A tool for check your Linux server availability with a simple script execution o
 A solution which can deploy VMs with 2 NICs. It deploys VNET, Subnets, NSGs, AvailabilitySets as well. [Jump there](201_multi_nic_vm)
 
 
+## 202 - Virtual Machine with multiple NICs and LoadBalancer
 
+A solution which can deploy VMs with 2 NICs. It deploys VNET, Subnets, NSGs, AvailabilitySets and LoadBalancer as well. [Jump there](202_multi_nic_vm_lb)
 
 

@@ -1,0 +1,43 @@
+- name: Create VirtualNetwork and NSGs
+  hosts: virtualnetworks
+  connection: local
+  gather_facts: no
+  vars:
+   rgName: "{{env_id}}-rg-{{resource_group}}"
+   vnet_name: "{{env_id}}-{{inventory_hostname}}"
+  tasks:
+  - name: Create Network Security Group - FE -  that allows SSH
+    azure_rm_securitygroup:
+      resource_group: "{{rgName}}"
+      name: "{{env_id}}-nsg-fe"
+      rules:
+        - name: SSH
+          protocol: Tcp
+          destination_port_range: 22
+          access: Allow
+          priority: 1001
+          direction: Inbound
+  - name: Create Network Security Group - BE
+    azure_rm_securitygroup:
+      resource_group: "{{rgName}}"
+      name: "{{env_id}}-nsg-be"
+  - name: Create virtual network
+    azure_rm_virtualnetwork:
+      resource_group: "{{rgName}}"
+      name: "{{vnet_name}}"
+      address_prefixes: "{{vnet_address_prefix}}"
+  - name: Add FE subnet
+    azure_rm_subnet:
+      resource_group: "{{rgName}}"
+      name: "{{env_id}}-subnet-fe"
+      address_prefix: "{{vnet_fe_subnet_address_prefix}}"
+      virtual_network: "{{vnet_name}}"
+      security_group: "{{env_id}}-nsg-fe"
+  - name: Add BE subnet
+    azure_rm_subnet:
+      resource_group: "{{rgName}}"
+      name: "{{env_id}}-subnet-be"
+      address_prefix: "{{vnet_be_subnet_address_prefix}}"
+      virtual_network: "{{vnet_name}}"
+      security_group: "{{env_id}}-nsg-be"
+

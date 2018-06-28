@@ -100,3 +100,11 @@ A simple and easy to understand example which can work in a live environment as 
 A tool for check your Linux server availability with a simple script execution on the remote VM. [Jump there](101_health_check)
 
 
+## 201 - Virtual Machine with multiple NICs
+
+A solution which can deploy VMs with 2 NICs. It deploys VNET, Subnets, NSGs, AvailabilitySets as well. [Jump there](201_multi_nic_vm)
+
+
+
+
+

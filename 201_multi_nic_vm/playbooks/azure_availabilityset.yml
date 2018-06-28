@@ -1,0 +1,14 @@
+- name: Create Availability-Sets
+  hosts: availability_sets
+  connection: local
+  gather_facts: no
+  vars:
+   rgName: "{{env_id}}-rg-{{resource_group}}"
+  tasks:
+  - name: Create an availability set with UD - FD
+    azure_rm_availabilityset:
+      name: "{{env_id}}-availabilityset-{{inventory_hostname}}"
+      resource_group: "{{rgName}}"
+      platform_update_domain_count: "{{updateDomain}}"
+      platform_fault_domain_count: "{{faultDomain}}"
+      sku: "{{sku}}"

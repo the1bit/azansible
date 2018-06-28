@@ -1,0 +1,16 @@
+[resourcegroups]
+custom
+common
+
+[virtualnetworks]
+vnet resource_group="common"
+
+[virtualmachines]
+the1bit-web-01 ansible_ssh_host=79.0.0.11 secondary_ip=79.0.1.11 vmrole="web" vmsize="Standard_DS12_v2" resource_group="custom"
+the1bit-web-02 ansible_ssh_host=79.0.0.12 secondary_ip=79.0.1.12 vmrole="web" vmsize="Standard_DS12_v2" resource_group="custom"
+the1bit-db-01 ansible_ssh_host=79.0.0.21 secondary_ip=79.0.1.21 vmrole="db" vmsize="Standard_DS12_v2" resource_group="custom"
+
+
+[availability_sets]
+web updateDomain=5 faultDomain=3 sku="Aligned" resource_group="custom"
+db updateDomain=5 faultDomain=3 sku="Aligned" resource_group="custom"

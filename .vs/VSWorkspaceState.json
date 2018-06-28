@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\100_fundamentals",
+    "\\100_fundamentals\\inventory",
+    "\\100_fundamentals\\inventory\\group_vars",
+    "\\100_fundamentals\\playbooks",
+    "\\101_health_check",
+    "\\201_multi_nic_vm",
+    "\\201_multi_nic_vm\\inventory",
+    "\\201_multi_nic_vm\\inventory\\group_vars",
+    "\\201_multi_nic_vm\\playbooks"
+  ],
+  "SelectedNode": "\\201_multi_nic_vm\\inventory\\group_vars\\virtualmachines.yml",
+  "PreviewInSolutionExplorer": false
+}

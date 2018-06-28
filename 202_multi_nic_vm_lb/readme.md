@@ -1,4 +1,4 @@
-201 - Create VM with multiple NICs
+202 - Create VM with multiple NICs and Loadbalancer
 === 
 
 # Description
@@ -29,7 +29,7 @@ Notes:
 * **mainpath**: Path of project directory 
 
 ``` bash
-ansible-playbook -i inventory/ -e mainpath="/data/git/azansible/201_multi_nic_vm" playbooks/main.yml
+ansible-playbook -i inventory/ -e mainpath="/data/git/azansible/202_multi_nic_vm_lb" playbooks/main.yml
 ```
 
 # Result

@@ -3,7 +3,7 @@
   connection: local
   gather_facts: no
   tasks:
-  - name: Create VM - 2 NICs
+  - name: Create VM - Single NICs
     azure_rm_virtualmachine:
       resource_group: "{{env_id}}-rg-{{resource_group}}"
       name: "{{inventory_hostname}}"
@@ -16,7 +16,6 @@
         - path: /home/localadmin/.ssh/authorized_keys
           key_data: "{{public_key}}"
       network_interface_names:
-      - "{{inventory_hostname}}-nic-fe"
       - "{{inventory_hostname}}-nic-be"
       image:
         offer: CentOS
@@ -28,4 +27,4 @@
           disk_size_gb: 128
           managed_disk_type: Premium_LRS
     when:
-    - "vmrole == 'web'"
+    - "vmrole == 'db'"

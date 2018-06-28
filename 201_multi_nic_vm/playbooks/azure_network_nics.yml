@@ -28,6 +28,8 @@
           private_ip_address: "{{ansible_ssh_host}}"
           public_ip_address_name: "{{inventory_hostname}}-pip"
           primary: true
+    when:
+    - "vmrole == 'web'"
   - name: Create virtual network inteface card - BE
     azure_rm_networkinterface:
       resource_group: "{{rgName}}"

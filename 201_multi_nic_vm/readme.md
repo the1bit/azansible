@@ -5,10 +5,14 @@
 
 Create VMs with 2 NICs
 
-# Azure architecture for this soluiton
+# Azure architecture for this solution
 
 ![AzureArchitecture_201](/images/AzureArchitecture_201.png)
 
+Notes:
+* Web servers have 2 NICS
+* DB server has only 1 NIC (in BackEnd subnet)
+* DB server does not have Public IP.
 
 # Requirements
 
@@ -29,7 +33,8 @@ ansible-playbook -i inventory/ -e mainpath="/data/git/azansible/201_multi_nic_vm
 ```
 
 # Result
-![Result Multi NICs VM](/images/multi_nic_vm.PNG)
+![Result Multi NICs VM 01](/images/multi_nic_vm_01.png)
+![Result Multi NICs VM 02](/images/multi_nic_vm_02.png)
 
 
 # login to vm

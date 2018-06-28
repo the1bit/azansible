@@ -2,7 +2,7 @@
 env_id: "the1bit"
 location: "westeurope"
 public_key: "ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEAw7MZOoRarCnS3Tg9G6HBd4bdUmEldXKRwAb7WZ4aW7oHOEZZCiQPFVBjM0G15Kz+UN5fokewxO9Ck902pAKLNlJmQLnZUol3M3U0zoEtY/dS6U7KuppqS9QsvgNgqjJuTQet+WnMfQbfGP6aqQ/Dk+9uEYnRJPrW1aiZVCBsT09hD2CtewHwKvVm/gHNT7aoIKzbRCwXznHMe7Qr30sye19P80Ha67O9Z66Jwgdytp4V88KcyzreJGgTyzf77kkIfHU0wveSv+NboEmrMzVpsaLeNgCeBquTrOHmR0f1aIynaR4ni/IdO2kuGMDPtnOvJwGu5nXdYEkNmzQRaPlv0Q=="
-vnet_rg: "shared"
+vnet_rg: "common"
 vnet_address_prefix: "79.0.0.0/23"
 vnet_fe_subnet_address_prefix: "79.0.0.0/24"
 vnet_be_subnet_address_prefix: "79.0.1.0/24"

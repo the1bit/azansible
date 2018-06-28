@@ -1,9 +1,9 @@
 [resourcegroups]
 custom
-shared
+common
 
 [virtualnetworks]
-vnet resource_group="shared"
+vnet resource_group="common"
 
 [virtualmachines]
 the1bit-web-01 ansible_ssh_host=79.0.0.11 secondary_ip=79.0.1.11 vmrole="web" vmsize="Standard_DS12_v2" resource_group="custom"
